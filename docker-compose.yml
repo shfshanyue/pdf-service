@@ -1,0 +1,13 @@
+version: "2"
+services:
+  app:
+    image: node:8.9
+    ports:
+      - 9000:9000
+    expose:
+      - 9000
+    volumes:
+      - .:/code
+    working_dir: /code
+    command: npm start
+    container_name: pdf-service
