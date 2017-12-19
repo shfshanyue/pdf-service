@@ -1,10 +1,11 @@
 const puppeteer = require('puppeteer')
 const _ = require('lodash')
+const config = require('../config')
 
 async function render (options) {
   const { url, cookies, pdf: pdfOptions } = options
   const browser = await puppeteer.launch({
-    executablePath: '/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary'
+    executablePath: config.browserPath
     // devtools: true
   })
   const page = await browser.newPage()
