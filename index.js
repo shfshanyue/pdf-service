@@ -12,7 +12,9 @@ app.use(koaBody())
 app.use(cors())
 app.use(api.middleware())
 
-app.listen(config.port)
-console.log(`listing port ${config.port}`)
+if (!module.parent) {
+  app.listen(config.port)
+  console.log(`listing port ${config.port}`)
+}
 
 module.exports = app
