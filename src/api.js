@@ -1,4 +1,4 @@
-const router= require('koa-joi-router')
+const router = require('koa-joi-router')
 const render = require('./pdf-util').render
 const api = router()
 const Joi = router.Joi
