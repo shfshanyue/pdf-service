@@ -16,7 +16,23 @@ api.route({
         domain: Joi.string(),
         expires: Joi.number(),
         httpOnly: Joi.boolean()
-      }))
+      })),
+      pdf: {
+        scale: Joi.number(),
+        displayHeaderFooter: Joi.boolean(),
+        printBackground: Joi.boolean(),
+        landscape: Joi.boolean(),
+        pageRanges: Joi.string(),
+        width: Joi.number(),
+        height: Joi.number(),
+        format: Joi.string(),
+        margin: {
+          top: Joi.string(),
+          right: Joi.string(),
+          bottom: Joi.string(),
+          left: Joi.string()
+        }
+      }
     }
   },
   async handler (ctx) {
