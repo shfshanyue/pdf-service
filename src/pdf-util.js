@@ -5,7 +5,8 @@ const config = require('../config')
 async function render (options) {
   const { url, cookies, pdf: pdfOptions } = options
   const browser = await puppeteer.launch({
-    executablePath: config.browserPath
+    executablePath: config.browserPath,
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
     // devtools: true
   })
   const page = await browser.newPage()
@@ -16,6 +17,7 @@ async function render (options) {
     })))
   }
   await page.goto(url, {
+    timeout: 600000,
     waitUntil: 'networkidle0'
   })
   const pdfFile = await page.pdf(pdfOptions)
