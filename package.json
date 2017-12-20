@@ -24,6 +24,8 @@
     "koa-joi-router": "^5.0.0",
     "koa-logger": "^3.1.0",
     "koa-router": "^7.3.0",
+    "leancloud-storage": "^3.4.2",
+    "leanengine": "^3.0.2",
     "lodash": "^4.17.4",
     "mocha": "^4.0.1",
     "nodemon": "^1.13.0",
